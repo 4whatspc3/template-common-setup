@@ -1,4 +1,3 @@
-
 import './style.css';
 
 import Icon from './icon.png';
@@ -6,31 +5,30 @@ import Icon from './icon.png';
 import printMe from './print.js';
 
 function component() {
-    const element = document.createElement('div');
-  
-    element.textContent = 'hi';
-    element.classList.add('hello');
+  const element = document.createElement('div');
 
-    const btn = document.createElement('button');
-    btn.textContent = 'Click me and check the console!';
-    btn.onclick = printMe;
+  element.textContent = 'hi';
+  element.classList.add('hello');
 
-    element.appendChild(btn);
-  
-    return element;
+  const btn = document.createElement('button');
+  btn.textContent = 'Click me and check the console!';
+  btn.onclick = printMe;
+
+  element.appendChild(btn);
+
+  return element;
 }
 
 function imgComponent() {
-    const container = document.createElement('div');
-    container.classList.add('hello');
+  const container = document.createElement('div');
+  container.classList.add('hello');
 
-    const myIcon = new Image();
-    myIcon.src = Icon;
+  const myIcon = new Image();
+  myIcon.src = Icon;
 
-    container.appendChild(myIcon);
-  
-    return container;
+  container.appendChild(myIcon);
+
+  return container;
 }
 
-  
 document.body.append(component(), imgComponent());
