@@ -14,15 +14,15 @@
           p = s()(u);
         l.push([
           e.id,
-          `.hello {\n    color: red;\n    background: url(${p});\n}`,
+          `.hello {\n  color: red;\n  background: url(${p});\n}\n`,
           "",
           {
             version: 3,
             sources: ["webpack://./src/style.css"],
             names: [],
-            mappings: "AAAA;IACI,UAAU;IACV,mDAA6B;AACjC",
+            mappings: "AAAA;EACE,UAAU;EACV,mDAA6B;AAC/B",
             sourcesContent: [
-              ".hello {\n    color: red;\n    background: url('./icon.png');\n}",
+              '.hello {\n  color: red;\n  background: url("./icon.png");\n}\n',
             ],
             sourceRoot: "",
           },
@@ -361,25 +361,26 @@
       function m() {
         console.log("I get called from print.js!");
       }
-      document.body.append(
-        (function () {
-          const e = document.createElement("div");
-          (e.textContent = "hi"), e.classList.add("hello");
-          const t = document.createElement("button");
-          return (
-            (t.textContent = "Click me and check the console!"),
-            (t.onclick = m),
-            e.appendChild(t),
-            e
-          );
-        })(),
-        (function () {
-          const e = document.createElement("div");
-          e.classList.add("hello");
-          const t = new Image();
-          return (t.src = h), e.appendChild(t), e;
-        })(),
-      );
+      console.log("hello world!"),
+        document.body.append(
+          (function () {
+            var e = document.createElement("div");
+            (e.textContent = "hi"), e.classList.add("hello");
+            var t = document.createElement("button");
+            return (
+              (t.textContent = "Click me and check the console!"),
+              (t.onclick = m),
+              e.appendChild(t),
+              e
+            );
+          })(),
+          (function () {
+            var e = document.createElement("div");
+            e.classList.add("hello");
+            var t = new Image();
+            return (t.src = h), e.appendChild(t), e;
+          })(),
+        );
     })();
 })();
 //# sourceMappingURL=app.bundle.js.map

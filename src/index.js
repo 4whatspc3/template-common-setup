@@ -31,4 +31,8 @@ function imgComponent() {
   return container;
 }
 
+const hello = () => console.log("hello world!");
+
+hello();
+
 document.body.append(component(), imgComponent());
